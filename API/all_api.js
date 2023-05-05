@@ -1,5 +1,4 @@
 import ApiManager from "./api";
-import { _store_data, _retrieve_data } from "../handler/storage_handler";
 
 const user_login = async data => {
 
