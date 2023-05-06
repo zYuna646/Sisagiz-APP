@@ -14,40 +14,44 @@ import Home from './Home'
 import { _store_data, _retrieve_data } from '../Handler/handler_storage'
 import { Feather } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { get_articleBy_category } from '../API/all_api'
+import { get_all_bayi, get_articleBy_category } from '../API/all_api'
+import { useRoute } from '@react-navigation/native'
 
 
 export default function Tabs(props) {
     const Tab = createBottomTabNavigator()
-
-
-
     const [user, set_user] = React.useState(null)
-
+    const route = useRoute()
     const fetchData = async () => {
 
         const user = await _retrieve_data('user')
         set_user(user)
-
         await get_articleBy_category({
             category: ''
         }).then((result) => {
-            if(result.status == 200){
+            if (result.status == 200) {
                 const articleData = result.data.data;
                 _store_data('Article', articleData)
             }
         })
+
+        if(user!= null){
+            await get_all_bayi(user.jwt.token, {
+            }).then((result) => {
+                
+            })
+
+
+        }
     }
     React.useEffect(() => {
         fetchData()
-    }, [])
+    }, [route])
     return (
         <>
-            {user == null ?
-            (
-                <Tab.Navigator
+            <Tab.Navigator
                 screenOptions={{
-                    tabBarShowLabel: false,
+                    tabBarShowLabel: true,
                     headerShown: false
                 }}
             >
@@ -59,19 +63,20 @@ export default function Tabs(props) {
                     }}
                     name="Home"
                     component={Home} />
+
+
                 <Tab.Screen
                     options={{
                         tabBarIcon: (props) => (
                             <Feather name="aperture" size={24} color="black" />
                         ),
                     }}
-                    name="Status Gizi"
-                    component={Graph} />
+                    name={user != null ? (user.user.role !== 'masyarakat' ? ("Pengukuran") : ('Status Gizi')) : ('Status Gizi')}
+                    component={user != null ? (user.user.role !== 'masyarakat' ? (Measurment) : (Graph)) : (Graph)} />
                 <Tab.Screen
                     options={{
                         tabBarIcon: (props) => (
                             <Feather name="book" size={24} color="black" />
-
                         ),
                     }}
                     name="Article"
@@ -82,17 +87,10 @@ export default function Tabs(props) {
                             <Feather name="user" size={24} color="black" />
                         ),
                     }}
-                    name="Login"
-                    component={Login} />
+                    name={user != null ? ('Profile') : ('Login')}
+                    component={user != null ? (Profile) : (Login)} />
             </Tab.Navigator>
-            )
-            :
-            (
-                <ActivityIndicator />
-            )
-        }
 
-            
         </>
     )
 }
