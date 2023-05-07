@@ -16,6 +16,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './Screen/Home';
 import DetailArticle from './Screen/DetailArticle';
+import Calculator_res from './Screen/Calculator_res';
 
 
 export default function App() {
@@ -43,6 +44,10 @@ export default function App() {
           options={{ headerShown: false }}
           name="Calculator"
           component={Calculator} />
+          <Stack.Screen
+          options={{ headerShown: false }}
+          name="Calculator_res"
+          component={Calculator_res} />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Graph"

@@ -14,16 +14,16 @@ import Home from './Home'
 import { _store_data, _retrieve_data } from '../Handler/handler_storage'
 import { Feather } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { get_all_bayi, get_articleBy_category } from '../API/all_api'
+import { get_all_bayi, get_articleBy_category, user_measurmet } from '../API/all_api'
 import { useRoute } from '@react-navigation/native'
 
 
 export default function Tabs(props) {
     const Tab = createBottomTabNavigator()
     const [user, set_user] = React.useState(null)
+    const [riwayat, set_riwayat] = React.useState(null)
     const route = useRoute()
     const fetchData = async () => {
-
         const user = await _retrieve_data('user')
         set_user(user)
         await get_articleBy_category({
@@ -34,15 +34,6 @@ export default function Tabs(props) {
                 _store_data('Article', articleData)
             }
         })
-
-        if(user!= null){
-            await get_all_bayi(user.jwt.token, {
-            }).then((result) => {
-                
-            })
-
-
-        }
     }
     React.useEffect(() => {
         fetchData()

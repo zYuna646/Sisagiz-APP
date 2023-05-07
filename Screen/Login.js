@@ -29,9 +29,9 @@ export default function Login(props) {
     await user_login({
       email: username,
       password: password
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.status == 200) {
-        _store_data('user', result.data)
+        await _store_data('user', result.data)
         props.navigation.navigate("Home")
       }else{
         alert(result.message)
