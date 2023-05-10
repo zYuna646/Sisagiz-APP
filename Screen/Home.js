@@ -233,9 +233,13 @@ export default function Home(props) {
                     {riwayat != null ? (
                       <View style={{ flexDirection: "row" }}>
                         {riwayat.map((value, index) => (
-                          <TouchableOpacity key={index} onPress={() => {
-                            props.navigation.navigate('Measurment')
-
+                          <TouchableOpacity key={index} onPress={async () => {
+                            await _store_data('pengukuran', {
+                              uuid: value.Toddler.uuid,
+                              date: value.date
+                            }).then((result) => {
+                              props.navigation.navigate('Measurment_res')
+                            })
                           }}>
                             <View style={styles.boxRiwayat}>
                               <Text style={styles.riwayatUmur}>{value.date}</Text>

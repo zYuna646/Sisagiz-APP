@@ -63,15 +63,16 @@ export default function Tabs(props) {
                         ),
                     }}
                     name={user != null ? (user.user.role !== 'masyarakat' ? ("Pengukuran") : ('Status Gizi')) : ('Status Gizi')}
-                    component={user != null ? (user.user.role !== 'masyarakat' ? (Measurment) : (Graph)) : (Graph)} />
+                    component={user != null ? (user.user.role !== 'masyarakat' ? (Measurment) : (Graph)) : (Login)} />
                 <Tab.Screen
                     options={{
                         tabBarIcon: (props) => (
                             <Feather name="book" size={24} color="black" />
                         ),
                     }}
-                    name="Article"
-                    component={Article} />
+                    name={user != null ? (user.user.role !== 'masyarakat' ? ("Status Gizi") : ('Artikel')) : ('Artikel')}
+                    component={user != null ? (user.user.role !== 'masyarakat' ? (Graph) : (Article)) : (Article)} />
+
                 <Tab.Screen
                     options={{
                         tabBarIcon: (props) => (

@@ -17,6 +17,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Home from './Screen/Home';
 import DetailArticle from './Screen/DetailArticle';
 import Calculator_res from './Screen/Calculator_res';
+import Measurment_res from './Screen/Measurment _res';
 
 
 export default function App() {
@@ -60,6 +61,10 @@ export default function App() {
           options={{ headerShown: false }}
           name="Measurment"
           component={Measurment} />
+          <Stack.Screen
+          options={{ headerShown: false }}
+          name="Measurment_res"
+          component={Measurment_res} />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Profile"

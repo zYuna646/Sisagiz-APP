@@ -8,11 +8,11 @@ import { _store_data } from '../Handler/handler_storage';
 
 
 export default function Calculator(props) {
-  const [fontLoaded, set_fontLoaded] = React.useState(false)
   const [AGE, setAge] = React.useState(0)
   const [BB, setBB] = React.useState(0)
   const [TB, setTB] = React.useState(0)
   const [JK, setJK] = React.useState('L')
+  const [fontLoaded, set_fontLoaded] = React.useState(false)
 
   const fontLoad = async () => {
     await Font.loadAsync({
