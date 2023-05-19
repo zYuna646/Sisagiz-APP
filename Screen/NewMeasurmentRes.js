@@ -91,9 +91,9 @@ export default function NewMeasurmentRes(props) {
                                                         <Text style={styles.hasilTxt}>{bayi.current_age} Bulan</Text>
                                                         <Text style={styles.hasilTxt}>{bayi.bb} Kg</Text>
                                                         <Text style={styles.hasilTxt}>{bayi.tb} Cm</Text>
-                                                        <Text style={styles.hasilTxt}>{bayi.bbu}</Text>
-                                                        <Text style={styles.hasilTxt}>{bayi.tbu}</Text>
-                                                        <Text style={styles.hasilTxt}>{bayi.bbtb}</Text>
+                                                        <Text style={styles.hasilTxt}>{bayi.bbu.replace(/[(][^)]*[)]/g, '')}</Text>
+                                                        <Text style={styles.hasilTxt}>{bayi.tbu.replace(/[(][^)]*[)]/g, '')}</Text>
+                                                        <Text style={styles.hasilTxt}>{bayi.bbtb.replace(/[(][^)]*[)]/g, '')}</Text>
                                                         <Text style={styles.hasilTxt}>{bayi.vitamin}</Text>
 
                                                     </View>
