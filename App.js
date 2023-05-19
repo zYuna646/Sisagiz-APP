@@ -18,6 +18,8 @@ import Home from './Screen/Home';
 import DetailArticle from './Screen/DetailArticle';
 import Calculator_res from './Screen/Calculator_res';
 import Measurment_res from './Screen/Measurment _res';
+import NewCalculatorRes from './Screen/NewCalculatorRes';
+import NewMeasurmentRes from './Screen/NewMeasurmentRes';
 
 
 export default function App() {
@@ -48,7 +50,7 @@ export default function App() {
           <Stack.Screen
           options={{ headerShown: false }}
           name="Calculator_res"
-          component={Calculator_res} />
+          component={NewCalculatorRes} />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Graph"
@@ -64,7 +66,7 @@ export default function App() {
           <Stack.Screen
           options={{ headerShown: false }}
           name="Measurment_res"
-          component={Measurment_res} />
+          component={NewMeasurmentRes} />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Profile"

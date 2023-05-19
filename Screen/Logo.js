@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Svg, Rect, Text as SvgText, Circle } from 'react-native-svg';
+import { Svg, Rect, Text as SvgText, Circle, Path } from 'react-native-svg';
 
 export default function Logo() {
     return (

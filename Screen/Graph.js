@@ -49,7 +49,7 @@ export default function Graph(props) {
     if (data_user.user.role !== 'masyarakat' && data_user != null) {
       const newDataBayi = data.filter((value) => value.Posyandu.uuid === data_user.user.posyandu_uuid);
       setDataBayi(newDataBayi);
-    } else {
+    } else if (data_user.user.role === 'masyarakat' && data_user != null) { 
       const newDataBayi = data.filter((value) => value.Parent.uuid === data_user.user.parent_uuid);
       setDataBayi(newDataBayi)
     }
