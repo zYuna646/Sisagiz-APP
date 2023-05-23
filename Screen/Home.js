@@ -249,7 +249,7 @@ export default function Home(props) {
                                 color={value.predict_result == 0 ? ('green') : ('red')}
                                 style={{ position: "absolute", left: 110, top: 10 }}
                               />
-                              <Text style={styles.riwayatNama}>{value.Toddler.name}</Text>
+                              <Text style={styles.riwayatNama}>{value.Toddler.name.split(' ')[0]}</Text>
                             </View>
                           </TouchableOpacity>
                         ))}
