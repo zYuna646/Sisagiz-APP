@@ -52,7 +52,7 @@ export default function NewCalculatorRes(props) {
       {fontLoaded ?
         (
           <ScrollView style={{ flex: 1, backgroundColor: 'rgba(150, 105, 169, 0.11)' }}>
-            <View style={{ flex: 1, margin: '10%', flexDirection: 'column' }}>
+            <View style={{ flex: 1, margin: '5%', flexDirection: 'column' }}>
               <Text style={{ fontFamily: 'PopBold', fontSize: 24, color: '#1C1646' }}>Hasil Pengukuran sementara</Text>
               {success ?
 
@@ -100,8 +100,10 @@ export default function NewCalculatorRes(props) {
                             <Text style={styles.smalTxt}>    :    </Text>
                             <Text style={styles.smalTxt}>    :    </Text>
                           </View>
-                          <View style={{ marginTop: 3, flexDirection:'column', flexWrap: 'wrap'}}>
-                            <Text style={styles.hasilTxt}>{hasilData.bbu.status.replace(/[(][^)]*[)]/g, '')}</Text>
+                          <View style={{ marginTop: 3, flexDirection: 'column', flexWrap: 'wrap' }}>
+                            <ScrollView>
+                              <Text style={styles.hasilTxt}>{hasilData.bbu.status.replace(/[(][^)]*[)]/g, '')}</Text>
+                            </ScrollView>
                             <Text style={styles.hasilTxt}>{hasilData.tbu.status.replace(/[(][^)]*[)]/g, '')}</Text>
                             <Text style={styles.hasilTxt}>{hasilData.bbtb.status.replace(/[(][^)]*[)]/g, '')}</Text>
                           </View>
@@ -147,7 +149,7 @@ export default function NewCalculatorRes(props) {
 const styles = StyleSheet.create({
   txt: {
     fontFamily: 'PopBold',
-    fontSize: 14,
+    fontSize: 18,
     color: '#F9F9FF',
     margin: '5%'
   },
@@ -160,14 +162,14 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     backgroundColor: 'white',
-    margin: '5%',
+    margin: '4%',
   },
   smalTxt: {
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: 'PopBold'
   },
   hasilTxt: {
-    fontSize: 12,
+    fontSize: 14,
     fontFamily: 'PopRegular',
   },
   rekomendasiTxt: {

@@ -50,7 +50,7 @@ export default function NewMeasurmentRes(props) {
             {fontLoaded ?
                 (
                     <ScrollView style={{ flex: 1, backgroundColor: 'rgba(150, 105, 169, 0.11)' }}>
-                        <View style={{ flex: 1, margin: '10%', flexDirection: 'column' }}>
+                        <View style={{ flex: 1, margin: '5%', flexDirection: 'column' }}>
                             <Text style={{ fontFamily: 'PopBold', fontSize: 24, color: '#1C1646' }}>Hasil Pengukuran</Text>
                             {bayi != null ? (
                                 <Text style={{ fontFamily: "PopBold", fontSize: 18}}>
@@ -161,7 +161,7 @@ export default function NewMeasurmentRes(props) {
 const styles = StyleSheet.create({
     txt: {
         fontFamily: 'PopBold',
-        fontSize: 14,
+        fontSize: 18,
         color: '#F9F9FF',
         margin: '5%'
     },
@@ -174,14 +174,14 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         backgroundColor: 'white',
-        margin: '5%',
+        margin: '4%',
     },
     smalTxt: {
-        fontSize: 12,
+        fontSize: 14,
         fontFamily: 'PopBold'
     },
     hasilTxt: {
-        fontSize: 12,
+        fontSize: 14,
         fontFamily: 'PopRegular',
     },
     rekomendasiTxt: {
