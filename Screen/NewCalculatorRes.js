@@ -101,9 +101,7 @@ export default function NewCalculatorRes(props) {
                             <Text style={styles.smalTxt}>    :    </Text>
                           </View>
                           <View style={{ marginTop: 3, flexDirection: 'column', flexWrap: 'wrap' }}>
-                            <ScrollView>
-                              <Text style={styles.hasilTxt}>{hasilData.bbu.status.replace(/[(][^)]*[)]/g, '')}</Text>
-                            </ScrollView>
+                            <Text style={styles.hasilTxt}>{hasilData.bbu.status.replace(/Berat Badan/g, '').replace(/[(][^)]*[)]/g, '').trim()}</Text>
                             <Text style={styles.hasilTxt}>{hasilData.tbu.status.replace(/[(][^)]*[)]/g, '')}</Text>
                             <Text style={styles.hasilTxt}>{hasilData.bbtb.status.replace(/[(][^)]*[)]/g, '')}</Text>
                           </View>
